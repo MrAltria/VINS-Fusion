@@ -96,8 +96,8 @@ Open two terminals, run vins and rviz respectively.
 (We evaluated odometry on KITTI benchmark without loop closure funtion)
 ```
     roslaunch vins vins_rviz.launch
-    (optional) rosrun loop_fusion loop_fusion_node ~/catkin_ws/src/VINS-Fusion/config/kitti_odom/kitti_config00-02.yaml
-    rosrun vins kitti_odom_test ~/catkin_ws/src/VINS-Fusion/config/kitti_odom/kitti_config00-02.yaml YOUR_DATASET_FOLDER/sequences/00/ 
+    (optional) rosrun loop_fusion loop_fusion_node src/VINS-Fusion/config/kitti_odom/kitti_config00-02.yaml
+    rosrun vins kitti_odom_test src/VINS-Fusion/config/kitti_odom/kitti_config00-02.yaml /media/chen/WD_BLACK/dataset/kitti/odometry/data_odometry_gray/dataset/sequences/00/ 
 ```
 ### 4.2 KITTI GPS Fusion (Stereo + GPS)
 Download [KITTI raw dataset](http://www.cvlibs.net/datasets/kitti/raw_data.php) to YOUR_DATASET_FOLDER. Take [2011_10_03_drive_0027_synced](https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_10_03_drive_0027/2011_10_03_drive_0027_sync.zip) for example.
@@ -105,7 +105,7 @@ Open three terminals, run vins, global fusion and rviz respectively.
 Green path is VIO odometry; blue path is odometry under GPS global fusion.
 ```
     roslaunch vins vins_rviz.launch
-    rosrun vins kitti_gps_test ~/catkin_ws/src/VINS-Fusion/config/kitti_raw/kitti_10_03_config.yaml YOUR_DATASET_FOLDER/2011_10_03_drive_0027_sync/ 
+    rosrun vins kitti_gps_test src/VINS-Fusion/config/kitti_raw/kitti_10_03_config.yaml /media/chen/WD_BLACK/dataset/kitti/raw/2011_10_03/2011_10_03_drive_0042_sync/ 
     rosrun global_fusion global_fusion_node
 ```
 
