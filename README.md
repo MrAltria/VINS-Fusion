@@ -110,7 +110,16 @@ Green path is VIO odometry; blue path is odometry under GPS global fusion.
 ```
 
 <img src="https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/blob/master/support_files/image/kitti.gif" width = 430 height = 240 />
-
+### 4.3 KITTI GPS Fusion2 (Stereo + GPS)
+Download [KITTI raw dataset](http://www.cvlibs.net/datasets/kitti/raw_data.php) to YOUR_DATASET_FOLDER. Take [2011_10_03_drive_0027_synced](https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_10_03_drive_0027/2011_10_03_drive_0027_sync.zip) for example.
+Open three terminals, run vins, global fusion and rviz respectively. 
+Green path is VIO odometry; blue path is odometry under GPS global fusion.
+```
+    roslaunch vins vins_rviz.launch
+    rosrun vins vins_node src/VINS-Fusion/config/kitti_raw/zju_kitti_10_03_config.yaml
+    rosbag play /media/chen/WD_BLACK/dataset/kitti/raw/kitti_2011_10_03_drive_0027_synced.bag
+    (op)rosrun global_fusion global_fusion_node
+```
 ## 5. VINS-Fusion on car demonstration
 Download [car bag](https://drive.google.com/open?id=10t9H1u8pMGDOI6Q2w2uezEq5Ib-Z8tLz) to YOUR_DATASET_FOLDER.
 Open four terminals, run vins odometry, visual loop closure(optional), rviz and play the bag file respectively. 
