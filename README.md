@@ -45,11 +45,12 @@ Follow [Ceres Installation](http://ceres-solver.org/installation.html).
 ## 2. Build VINS-Fusion
 Clone the repository and catkin_make:
 ```
-    cd ~/catkin_ws/src
+    mkdir -p vins_ws/src
+    cd /vins_ws/src
     git clone https://github.com/HKUST-Aerial-Robotics/VINS-Fusion.git
     cd ../
     catkin_make
-    source ~/catkin_ws/devel/setup.bash
+    source ~/vins_ws/devel/setup.bash
 ```
 (if you fail in this step, try to find another computer with clean system or reinstall Ubuntu and ROS)
 
